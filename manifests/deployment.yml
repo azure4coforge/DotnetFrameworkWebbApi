@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: azurecoforgedotnetframeworkwebbapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azurecoforgedotnetframeworkwebbapi
+  template:
+    metadata:
+      labels:
+        app: azurecoforgedotnetframeworkwebbapi 
+    spec:
+      containers:
+        - name: azurecoforgedotnetframeworkwebbapi 
+          image: azecrdockerimages.azurecr.io/azurecoforgedotnetframeworkwebbapi
+          ports:
+          - containerPort: 80
